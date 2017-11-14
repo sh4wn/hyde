@@ -1,0 +1,122 @@
+baseURL = "http://lucasvandijk.nl/"
+languageCode = "en-us"
+title = '<span class="top">Lucas</span> <span class="bottom">van Dijk</span>'
+copyright = "&copy; 2017 Lucas van Dijk"
+theme = "academic"
+
+[permalinks]
+  post = "/:year/:month/:title/"
+
+[params]
+  name = "Lucas van Dijk"
+  role = "PhD-candidate in bioinformatics"
+
+  avatar = "portrait.jpg"
+  gravatar = false
+  email = "info@lucasvandijk.nl"
+
+  date_format = "Jan 2, 2006"
+
+  highlight = true
+  highlight_languages = ["python"]
+
+  sharing = true
+
+  # Publication types.
+  #   Used to categorize publications.
+  #   The index of the publication type in the list is used as its unique numerical identifier.
+  #   The numeric ID is used in a publication's frontmatter to categorize it.
+  #   The language can be edited below.
+  #   For multi-lingual sites, copy this block to each language section at the end of this file.
+  publication_types = [
+    'Uncategorized',  # 0
+    'Conference proceedings',  # 1
+    'Journal',  # 2
+    'Work in progress',  # 3
+    'Technical report',  # 4
+    'Book',  # 5
+    'Book chapter'  # 6
+  ]
+
+  [[params.organization]]
+    organization = "Broad Institute of MIT and Harvard"
+    organization_url = "https://broadinstitute.org"
+
+  [[params.organization]]
+    organization = "Delft University of Technology"
+    organization_url = "https://tudelft.nl"
+
+
+  # Social/Academic Networking
+  #
+  # Icon pack "fa" includes the following social network icons:
+  #
+  #   twitter, weibo, linkedin, github, facebook, pinterest, google-plus,
+  #   youtube, instagram, soundcloud
+  #
+  #   For email icon, use "fa" icon pack, "envelope" icon, and
+  #   "mailto:your@email.com" as the link.
+  #
+  #   Full list: https://fortawesome.github.io/Font-Awesome/icons/
+  #
+  # Icon pack "ai" includes the following academic network icons:
+  #
+  #   google-scholar, arxiv, orcid, researchgate, mendeley
+  #
+  #   Full list: https://jpswalsh.github.io/academicons/
+
+  [[params.social]]
+    icon = "envelope"
+    icon_pack = "fa"
+    link = "mailto:info@lucasvandijk.nl"
+
+  [[params.social]]
+    icon = "twitter"
+    icon_pack = "fa"
+    link = "//twitter.com/lucasvandijk"
+
+  [[params.social]]
+    icon = "github"
+    icon_pack = "fa"
+    link = "//github.com/lrvdijk"
+
+# Configure the English version of the website.
+[languages.en]
+  languageCode = "en-us"
+
+# Taxonomies.
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  publication_type = "publication_types"
+
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+
+[[menu.main]]
+  name = "Home"
+  url = "#top"
+  weight = 1
+
+[[menu.main]]
+  name = "Blog"
+  url = "#blog"
+  weight = 2
+
+# [[menu.main]]
+#   name = "Publications"
+#   url = "#publications_selected"
+#   weight = 3
+
+[[menu.main]]
+  name = "Projects"
+  url = "#projects"
+  weight = 4
+
+[[menu.main]]
+  name = "Contact"
+  url = "#contact"
+  weight = 6
+
