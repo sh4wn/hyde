@@ -2,7 +2,7 @@
 # About/Biography widget.
 
 date = "2017-09-06T00:00:00"
-draft = false
+active = true
 
 widget = "about"
 

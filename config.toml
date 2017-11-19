@@ -1,26 +1,75 @@
-baseURL = "http://lucasvandijk.nl/"
+baseURL = "https://lucasvandijk.nl/"
 languageCode = "en-us"
 title = '<span class="top">Lucas</span> <span class="bottom">van Dijk</span>'
 copyright = "&copy; 2017 Lucas van Dijk"
 theme = "academic"
+enableEmoji = true
+footnotereturnlinkcontents = "<sup>^</sup>"
+preserveTaxonomyNames = true
+paginate = 10
+
+# Enable comments by entering your Disqus shortname
+disqusShortname = ""
+
+# Enable analytics by entering your Google Analytics tracking ID
+googleAnalytics = ""
+
+# Default language to use (if you setup multilingual support)
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[outputs]
+  home = [ "HTML", "CSS", "RSS" ]
+  section = [ "HTML", "RSS" ]
+
+# Configure BlackFriday Markdown rendering.
+#   See: https://gohugo.io/readfiles/bfconfig/
+[blackfriday]
+  hrefTargetBlank = true  # `true` opens external links in a new tab.
+  fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
+  smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
+
 
 [permalinks]
   post = "/:year/:month/:title/"
 
 [params]
+  # Color theme.
+  #   Choose from `default`, `ocean`, `forest`, `coffee`, or `dark`.
+  color_theme = "lvd"
+
+  # Font style.
+  #   Choose from `default`, `classic`, or `playfair`.
+  font = "lvd"
+
   name = "Lucas van Dijk"
   role = "PhD-candidate in bioinformatics"
+
+  # Organizations/Affiliations.
+  #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
+  organizations = [ 
+    { name = "Broad Institute of MIT and Harvard", url = "https://broadinstitute.org" },
+    { name = "Delft University of Technology", url = "https://tudelft.nl" }
+  ]
 
   avatar = "portrait.jpg"
   gravatar = false
   email = "info@lucasvandijk.nl"
+  keybase = "sh4wn"
 
   date_format = "Jan 2, 2006"
 
   highlight = true
   highlight_languages = ["python"]
 
+  # Link custom CSS and JS assets
+  #   (relative to /static/css and /static/js respectively)
+  custom_css = []
+  custom_js  = []
+
   sharing = true
+  comment_count = true
+  reading_time = true
 
   # Publication types.
   #   Used to categorize publications.
@@ -38,14 +87,28 @@ theme = "academic"
     'Book chapter'  # 6
   ]
 
-  [[params.organization]]
-    organization = "Broad Institute of MIT and Harvard"
-    organization_url = "https://broadinstitute.org"
+  # Configuration of talk pages.
+  [params.talks]
+    # Show talk time?
+    time = true
 
-  [[params.organization]]
-    organization = "Delft University of Technology"
-    organization_url = "https://tudelft.nl"
+  # Configuration of publication pages.
+  [params.publications]
+    # Date format (refer to Go's date format: http://fuckinggodateformat.com )
+    #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
+    date_format = "January, 2006"
 
+  # Configuration of project pages.
+  [params.projects]
+    # List publications and talks related to the project?
+    list_children = true
+
+    # Publication list format.
+    #   0 = Simple
+    #   1 = Detailed
+    #   2 = APA
+    #   3 = MLA
+    publication_format = 3
 
   # Social/Academic Networking
   #
@@ -79,6 +142,11 @@ theme = "academic"
     icon = "github"
     icon_pack = "fa"
     link = "//github.com/lrvdijk"
+
+  [[params.social]]
+    icon = "linkedin"
+    icon_pack = "fa"
+    link = "//linkedin.com/in/lrvandijk"
 
 # Configure the English version of the website.
 [languages.en]
