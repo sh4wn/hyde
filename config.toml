@@ -182,9 +182,3 @@ defaultContentLanguageInSubdir = false
   name = "Projects"
   url = "#projects"
   weight = 4
-
-[[menu.main]]
-  name = "Contact"
-  url = "#contact"
-  weight = 6
-
