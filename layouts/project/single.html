@@ -1,0 +1,116 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<article class="article article-project" itemscope itemtype="http://schema.org/Article">
+
+    {{ partial "header_image.html" . }}
+    {{ $page := . }}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="pub-title">
+                    <h1 itemprop="name">{{ .Title }}</h1>
+                    <span class="pub-authors" itemprop="author">&nbsp;</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <aside class="col-xs-12 col-sm-12 col-md-3 pull-right quick-info">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-12">
+                        <h2>Quick Info</h2>
+                        <p>
+                            {{ with .Params.status }}
+                            <strong>Status:</strong> {{ . }}<br>
+                            {{ end}}
+                            {{ with .Params.license }}
+                            <strong>License:</strong>
+                            {{ if $page.Params.license_url }}
+                            <a href="{{ $page.Params.license_url }}" target="_blank" rel="noopenener">{{ . }}</a>
+                            {{ else }}
+                            {{ . }}
+                            {{ end }}
+                            <br>
+                            {{ end }}
+                        </p>
+                        <h2>Share</h2>
+                        {{ partial "share.html" . }}
+                    </div>
+
+                    {{ if .Params.github.url }}
+                    <div class="col-xs-6 col-sm-6 col-md-12">
+                        <h2>On Github</h2>
+                        {{ with .Params.github }}
+                        <p>
+                            <span class="fa fa-lg fa-github"></span>
+                            <a href="https://github.com/{{ .url }}" target="_blank" rel="noopener">{{ .url }}</a>
+                        </p>
+                        <p>
+                            <a class="github-button" href="https://github.com/{{ .url }}" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star {{ .url }} on GitHub">Star</a>
+                            {{ if .travis }}<br>
+                            <a href="https://travis-ci.org/{{ .url }}" class="text-center" target="_blank" rel="noopener">
+                                <img src="https://travis-ci.org/{{ .url }}.svg?branch={{ .travis }}" alt="Build Status of {{ .url }}" title="View build status of {{ .url }}" style="display: inline;">
+                            </a>
+                            {{ end }}
+                        </p>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+
+            </aside>
+
+            <div class="col-xs-12 col-sm-12 col-md-9">
+                {{ with .Params.external_link }}
+                <a class="btn btn-primary btn-outline" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "open_project_site" }}</a>
+                {{ end }}
+
+                <div class="article-style" itemprop="articleBody">
+                    {{ .Content }}
+                </div>
+
+                {{ partial "tags.html" . }}
+
+                {{ $project := .File.TranslationBaseName }}
+                {{ $project_path := printf "%s/%s/" .Section $project }}
+
+                {{ if (.Site.Params.projects.list_children | default true) }}
+                {{ $items := where (where .Site.RegularPages "Type" "publication") ".Params.projects" "intersect" (slice $project) }}
+                {{ $items := $items | union (where (where .Site.RegularPages "Type" "publication") ".Params.url_project" $project_path) }}
+                {{ $pubs_len := len $items }}
+                {{ if ge $pubs_len 1 }}
+                <h2>{{ (i18n "publications") }}</h2>
+                {{ range $items }}
+                {{ if eq $page.Site.Params.projects.publication_format 1 }}
+                {{ partial "publication_li_detailed" . }}
+                {{ else if eq $page.Site.Params.projects.publication_format 2 }}
+                {{ partial "publication_li_apa" . }}
+                {{ else if eq $page.Site.Params.projects.publication_format 3 }}
+                {{ partial "publication_li_mla" . }}
+                {{ else }}
+                {{ partial "publication_li_simple" . }}
+                {{ end }}
+                {{ end }}
+                {{ end }}
+
+                {{ $items := where (where .Site.RegularPages "Type" "talk") ".Params.projects" "intersect" (slice $project) }}
+                {{ $items := $items | union (where (where .Site.RegularPages "Type" "publication") ".Params.url_project" $project_path) }}
+                {{ $talks_len := len $items }}
+                {{ if ge $talks_len 1 }}
+                <h2>{{ (i18n "talks") }}</h2>
+                {{ range $items }}
+                {{ partial "talk_li_simple" . }}
+                {{ end }}
+                {{ end }}
+                {{ end }}
+
+            </div>
+
+
+        </div>
+    </div>
+</article>
+
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}
