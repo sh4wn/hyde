@@ -1,5 +1,10 @@
 ---
 title: "Visualising the height of the Netherlands"
+authors:
+    - name: "Lucas van Dijk"
+      affiliation: "Delft University of Technology"
+    - name: "Dorus Leliveld"
+      affiliation: "Delft University of Technology"
 date: 2018-01-14
 categories: ['Data Project']
 tags: ['python', 'gis']

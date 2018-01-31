@@ -449,6 +449,15 @@ ul.share li:hover .fa {
     transform: scale(1.4)
 }
 
+@media screen and (max-width: 768px) {
+    ul.share li .fa {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 14px;
+    }
+}
+
 /*************************************************
  *  Blog Articles
  **************************************************/
@@ -602,6 +611,21 @@ article {
     border-top: 1px solid rgba(0,0,0,.05);
     margin-top: 0.5rem;
     margin-bottom: 1rem;
+}
+
+.authors-box {
+    margin-top: 2em;
+    font-size: 0.6rem;
+}
+
+.authors-box th {
+    text-transform: uppercase;
+    font-family: '{{ .Get "heading_font" }}', sans-serif;
+}
+
+.authors-box td {
+    background-color: #f9f9f9;
+    border: none;
 }
 
 #comments {
@@ -983,7 +1007,7 @@ footer a#back_to_top i {
 .navbar {
     height: 150px;
     padding: 15px;
-    transition: height 0.5s ease;
+    transition: height 0.25s ease;
     border: none !important;
 }
 
