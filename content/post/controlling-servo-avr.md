@@ -33,8 +33,8 @@ Implementing it with an AVR microcontroller
 
 Lets start with the circuit, which is really simple. 
 
-![Circuit with an AVR ATTiny44 to control a servo]({{ site.baseurl 
-}}public/img/blogimages/servoschema.jpg)
+![Circuit with an AVR ATTiny44 to control a 
+servo](/img/blogimages/servoschema.jpg)
 
 In this case, I use a 9V battery to power my AVR, and 4 AA batteries (total of 6V), to power my servo. It's better to use a different power source for your servos, because they can draw high currents when they're rotating, and therefore possibly trigger your reset of the AVR resulting from the voltage drop. 
 
@@ -87,8 +87,8 @@ To summarize what is does: you start with providing two values: a TOP value, and
 
 To visualize a bit what's happening, here's a drawing:
 
-![Value of the timer, and the match events]({{ site.baseurl 
-}}public/img/blogimages/servo-timer-match.jpg)
+![Value of the timer, and the match 
+events](/img/blogimages/servo-timer-match.jpg)
 
 Some things you can conclude from the above drawing and description: The value in ICR1 defines the frequency, the value in OCR1A defines the duty cycle.
 

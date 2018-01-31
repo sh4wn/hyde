@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "name": "Amsterdam",
+    "location": [
+      4.895167900000001,
+      52.3702157
+    ]
+  },
+  "type": "Feature",
+  "geometry": {
+    "coordinates": [
+      [
+        3.197334050397514,
+        52.3702157
+      ],
+      [
+        7.27520376751888,
+        52.3702157
+      ]
+    ],
+    "type": "LineString"
+  }
+}

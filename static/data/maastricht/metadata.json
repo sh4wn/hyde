@@ -1,0 +1,23 @@
+{
+  "geometry": {
+    "coordinates": [
+      [
+        3.197334050397514,
+        50.8513682
+      ],
+      [
+        7.27520376751888,
+        50.8513682
+      ]
+    ],
+    "type": "LineString"
+  },
+  "properties": {
+    "name": "Maastricht",
+    "location": [
+      5.6909725,
+      50.8513682
+    ]
+  },
+  "type": "Feature"
+}

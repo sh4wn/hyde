@@ -1,0 +1,23 @@
+{
+  "type": "Feature",
+  "properties": {
+    "location": [
+      6.566501799999999,
+      53.2193835
+    ],
+    "name": "Groningen"
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [
+        3.197334050397514,
+        53.2193835
+      ],
+      [
+        7.27520376751888,
+        53.2193835
+      ]
+    ]
+  }
+}

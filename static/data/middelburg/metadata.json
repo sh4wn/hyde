@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "location": [
+      3.610998,
+      51.4987962
+    ],
+    "name": "Middelburg"
+  },
+  "type": "Feature",
+  "geometry": {
+    "coordinates": [
+      [
+        3.197334050397514,
+        51.4987962
+      ],
+      [
+        7.27520376751888,
+        51.4987962
+      ]
+    ],
+    "type": "LineString"
+  }
+}

@@ -7,6 +7,14 @@ image_preview: "projectimages/phasm.png"
 
 tags: ["Bioinformatics", "Python", "C++"]
 math: false
+
+status: "Finished"
+license: "MIT"
+license_url: "https://opensource.org/licenses/MIT"
+
+github:
+    url: "AbeelLab/phasm"
+    travis: "master"
 ---
 
 PHASM is a long read *de novo* genome assembler that phases variants among 

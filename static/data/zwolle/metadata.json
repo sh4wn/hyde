@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "name": "Zwolle",
+    "location": [
+      6.083021899999999,
+      52.5167747
+    ]
+  },
+  "geometry": {
+    "coordinates": [
+      [
+        3.197334050397514,
+        52.5167747
+      ],
+      [
+        7.27520376751888,
+        52.5167747
+      ]
+    ],
+    "type": "LineString"
+  },
+  "type": "Feature"
+}

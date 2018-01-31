@@ -7,18 +7,24 @@ image_preview: "projectimages/ledcube.jpg"
 tags: ["electronics", "C++"]
 math: false
 
+status: "Mature, development discontinued"
+license: "MIT"
+license_url: "https://opensource.org/licenses/MIT"
+
 header:
   image: projectimages/ledcube-full.jpg
   caption: "An 8x8x8 LED cube powered by several TLC5940 LED drivers"
+
+github:
+  url: lrvdijk/tlc5940-raspberry
+  travis: false
+
 ---
 
 This is a library which allows programs running in the userspace
 to control the TLC5940 LED driver with a Raspberry Pi. The user
 can specify the PWM value for each output channel of the TLC5940,
 and it also supports multiple cascaded TLC5940's. 
-
-* **Status:** mature, development discontinued.
-* **License**: MIT
 
 ## The TLC5940
 

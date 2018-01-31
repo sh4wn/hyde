@@ -1,0 +1,23 @@
+{
+  "type": "Feature",
+  "properties": {
+    "location": [
+      5.8372264,
+      51.8125626
+    ],
+    "name": "Nijmegen"
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [
+        3.197334050397514,
+        51.8125626
+      ],
+      [
+        7.27520376751888,
+        51.8125626
+      ]
+    ]
+  }
+}
