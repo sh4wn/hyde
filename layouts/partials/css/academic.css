@@ -7,6 +7,7 @@
 /*************************************************
  *  Core
  **************************************************/
+
 *, *::after, *::before {
   box-sizing: border-box;
 }
@@ -23,6 +24,7 @@ html {
   color: rgba(0,0,0,0.8);
   line-height: 1.65;
 }
+
 @media screen and (min-width: 58em) {
   html {
     font-size: {{ .Get "font_size" }}px;
@@ -34,13 +36,13 @@ body {
   font-size: 1rem;
   line-height: inherit;
   color: inherit;
-  margin-top: 151px; /* Offset body content by navbar height. */
+  margin-top: 150px; /* Offset body content by navbar height. */
   padding-top: 0;
   counter-reset: captions;
 }
 @media screen and (max-width: 1200px) { /* Match max-width of .nav-bar query. */
   body {
-    margin-top: 76px; /* Offset body content by navbar height. */
+    margin-top: 75px; /* Offset body content by navbar height. */
   }
 }
 
@@ -108,12 +110,6 @@ video {
   height: auto;
   max-width: 100%;
   display: block;
-}
-
-video {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
 }
 
 .img-responsive {
@@ -211,6 +207,7 @@ small,
 /*************************************************
  *  Modals.
  **************************************************/
+
 .modal-header .close {
   font-size: 40px; /* Bigger cross. */
   height: 30px; /* Remove icon's vertical spacing. */
@@ -225,68 +222,6 @@ small,
 
 #modal-error {
   color: red;
-}
-
-/*************************************************
- *  Gallery.
- **************************************************/
-
-.gallery {
-  margin: 0.5em -4px 1.5em -4px;
-  font-size: 0;
-}
-
-a[data-fancybox] {
-  text-decoration: none;
-}
-
-a[data-fancybox] img {
-  height: 250px;
-  max-width: inherit;
-  display: inherit;
-  margin: 0;
-  padding: 4px;
-  box-shadow: none;
-  vertical-align: inherit;
-}
-
-.fancybox-caption {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  text-align: center;
-}
-
-/*************************************************
- *  Pager.
- **************************************************/
-
-.post-nav {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-}
-
-.post-nav-item {
-  hyphens: auto;
-  word-wrap: break-word;
-  padding: 11px 0 12px;
-  width: 100%;
-}
-
-.post-nav-item a {
-  color: #2b2b2b;
-  line-height: 1.7;
-  text-transform: none;
-}
-
-.post-nav-item .meta-nav {
-  color: #767676;
-  font-weight: 900;
-  line-height: 2;
-  text-transform: uppercase;
-}
-
-.dark .post-nav-item a {
-  color: #ddd;
 }
 
 /*************************************************
@@ -381,37 +316,6 @@ a[data-fancybox] img {
 
 .hero-overlay .btn-large {
   font-size: 1.1rem;
-}
-
-/*************************************************
- *  Featurette Widget
- **************************************************/
-
-.featurette {
-  font-size: 0.8rem;
-  line-height: 1.5;
-  color: #555;
-  text-align: center;
-}
-
-.featurette h3 {
-  margin-top: 0;
-  margin-bottom: 5px;
-  font-weight: 400;
-  color: #333;
-}
-
-.dark .featurette,
-.dark .featurette h3 {
-  color: #fff;
-}
-
-.featurette-icon {
-  display: block;
-  width: 100%;
-  color: {{ .Get "primary" }};
-  font-size: 3rem;
-  text-align: center;
 }
 
 /*************************************************
@@ -544,6 +448,15 @@ ul.share li:hover .fa {
   transform: scale(1.4)
 }
 
+@media screen and (max-width: 768px) {
+  ul.share li .fa {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+  }
+}
+
 /*************************************************
  *  Blog Articles
  **************************************************/
@@ -600,7 +513,6 @@ article {
 }
 
 .article-title:first-of-type {
-  margin-top: 0px;
 }
 
 .article-title a {
@@ -611,6 +523,7 @@ article {
 .article-category {
   display: block;
   font-size: 1.25rem;
+  line-height: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   color: #aaa;
@@ -618,25 +531,35 @@ article {
 }
 
 .article-metadata {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  line-height: 30px; /* Match share bar line height. */
   overflow: hidden;
   font-size: 14px;
   letter-spacing: 0.03em;
   color: #888;
 }
 
-/* For article page only, not lists. */
-article .article-metadata {
-  margin-bottom: 20px;
-  line-height: 30px; /* Match share bar line height. */
+.share-box {
+  margin-top: 1rem;
 }
-
 .article-metadata a {
   color: #888;
 }
 
 .article-metadata a:hover {
   color: {{ .Get "primary" }};
+}
+
+.article-list-item {
+  margin-bottom: 40px;
+}
+
+.article-list-item:last-child {
+  margin-bottom: 0 !important;
+}
+
+.article-list-item .article-metadata {
+  margin-bottom: 5px;
 }
 
 .middot-divider {
@@ -649,13 +572,14 @@ article .article-metadata {
   content: '\00B7';
 }
 
-.article-style img,
-.article-style video {
+.article-style p img,
+.article-style p video {
+  box-shadow: 1px 1px 0px #edefed, -1px -1px 0px #edefed, 1px -1px 0px #edefed, -1px 1px 0px #edefed;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
-  margin-bottom: 60px;
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .article-style td img,
@@ -688,6 +612,21 @@ article .article-metadata {
   margin-bottom: 1rem;
 }
 
+.authors-box {
+  margin-top: 2em;
+  font-size: 0.6rem;
+}
+
+.authors-box th {
+  text-transform: uppercase;
+  font-family: '{{ .Get "heading_font" }}', sans-serif;
+}
+
+.authors-box td {
+  background-color: #f9f9f9;
+  border: none;
+}
+
 #comments {
   padding-top: 1rem;
 }
@@ -709,6 +648,10 @@ article .article-metadata {
   margin-right: auto;
 }
 
+.pub .pub-title {
+  margin-bottom: 5px;
+}
+
 .pub .pub-authors {
   font-style: italic;
   line-height: 30px; /* Match share bar line height. */
@@ -716,6 +659,10 @@ article .article-metadata {
 
 .pub .pub-row-heading {
   font-weight: bold;
+}
+
+.pub-list-item {
+  margin-bottom: 40px;
 }
 
 .pub-list-item .pub-abstract {
@@ -802,32 +749,30 @@ article .article-metadata {
   z-index: 3;
 }
 
+@media screen and (max-width: 992px) {
+  .quick-info {
+    background-color: {{ .Get "home_section_even" }};
+    margin-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+}
+
+@media screen and (min-width: 992px) {
+  .quick-info .col-xs-6, .quick-info .col-sm-6 {
+    margin-bottom: 1em;
+  }
+}
+
+.quick-info h2:first-child {
+  margin-top: 0px;
+}
+
+
 /*************************************************
  *  Card component
  **************************************************/
-
-.card-simple {
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0,0,0,.04);
-  border: 1px solid rgba(0,0,0,.09);
-  border-radius: 3px;
-  margin-top: 20px;
-  padding: 15px 20px 15px 20px;
-}
-
-.card-simple:first-of-type {
-  margin-top: 0;
-}
-
-.card-simple p.read-more {
-  margin: 0;
-}
-
-.dark .card-simple {
-  background: rgb(40, 42, 54);
-  box-shadow: 0 1px 4px rgba(0,0,0,.04);
-  border: 1px solid rgb(68, 71, 90);
-}
 
 .card {
   margin-bottom: 1.5rem;
@@ -1061,7 +1006,7 @@ footer a#back_to_top i {
 .navbar {
   height: 150px;
   padding: 15px;
-  transition: height 0.5s ease;
+  transition: height 0.25s ease;
   border: none !important;
 }
 
@@ -1503,6 +1448,7 @@ div.alert a:hover {
  **************************************************/
 
 body.dark {
+  background-color: rgb(40, 42, 54);
   color: rgb(248, 248, 242);
 }
 
