@@ -659,12 +659,11 @@ article .article-metadata {
   content: '\00B7';
 }
 
-.article-style img,
-.article-style video {
+.article-style p img,
+.article-style p video {
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
-  margin-bottom: 60px;
   padding: 0;
 }
 
@@ -834,6 +833,21 @@ article .article-metadata {
     padding-top: 1em;
     padding-bottom: 1em;
   }
+}
+
+@media screen and (min-width: 992px) {
+  .quick-info .col-xs-6, .quick-info .col-sm-6 {
+    margin-bottom: 1em;
+  }
+}
+
+.quick-info h2:first-child {
+  margin-top: 0px;
+}
+
+/*************************************************
+ *  Card component
+ **************************************************/
 
 .card-simple {
   background: #fff;
