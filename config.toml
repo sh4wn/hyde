@@ -1,21 +1,10 @@
-# Configuration of Academic
-# Documentation: https://sourcethemes.com/academic/
-
-# The URL of your website.
-# End your URL with a `/` trailing slash, e.g. `https://example.com/`.
-baseurl = "/"
-
-# Title of your site
-title = "Academic"
-
-# Your copyright notice - appears in site footer.
-# To display a copyright symbol, type `&copy;`.
-copyright = "&copy; 2018"
-
+baseURL = "https://lucasvandijk.nl/"
+languageCode = "en-us"
+title = '<span class="top">Lucas</span> <span class="bottom">van Dijk</span>'
+copyright = "&copy; 2017 Lucas van Dijk"
 theme = "academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 preserveTaxonomyNames = true
 paginate = 10
 
@@ -40,137 +29,62 @@ defaultContentLanguageInSubdir = false
   fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
   smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
 
+
+[permalinks]
+  post = "/:year/:month/:title/"
+
 [params]
   # Color theme.
-  #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, or `1950s`.
-  color_theme = "default"
+  #   Choose from `default`, `ocean`, `forest`, `coffee`, or `dark`.
+  color_theme = "lvd"
 
   # Font style.
   #   Choose from `default`, `classic`, or `playfair`.
-  font = "default"
+  font = "lvd"
 
-  # Your details.
-  name = "Lena Smith"
-  role = "Professor of Artificial Intelligence"
+  name = "Lucas van Dijk"
+  role = "PhD-candidate in bioinformatics"
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-  organizations = [ { name = "Stanford University", url = "" } ]
+  organizations = [ 
+    { name = "Broad Institute of MIT and Harvard", url = "https://broadinstitute.org" },
+    { name = "Delft University of Technology", url = "https://tudelft.nl" }
+  ]
 
-  gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-  avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
-  email = "test@example.org"
-  address = "Building 1 Room 1, Stanford University, California, 90210, USA"
-  office_hours = "Monday 10:00 to 13:00 or email for appointment"
-  phone = "888 888 88 88"
-  skype = "echo123"
-  telegram = ""
+  avatar = "portrait.jpg"
+  gravatar = false
+  email = "info@lucasvandijk.nl"
+  keybase = "sh4wn"
 
-  # Enable Keybase in Contact widget by entering your keybase.io username.
-  keybase = ""
-
-  # Discussion link (e.g. link to a forum, mailing list, or chat).
-  #   Uncomment line below to use.
-  #   discussion = { name = "Discuss", url = "https://discourse.gohugo.io" }
-
-  # Diplay a logo in navigation bar rather than title (optional).
-  #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
-  logo = ""
-
-  # Enable/disable map in Contact widget.
-  # To show your address on a map in the contact widget, you need to enter your latitude, longitude and choose
-  # a map provider below.
-  # To use Google Maps, set `map = 1` and enter your API key that can be obtained here:
-  #   https://developers.google.com/maps/documentation/javascript/get-api-key
-  # To use OpenStreetMap tiles, set `map = 2`.
-  # To use OpenStreetMap on a high traffic site, set `map = 3` and enter your API key that can be obtained here:
-  #   https://www.mapbox.com/studio/account/tokens
-  # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-  #
-  # Map provider:
-  #   0: No map
-  #   1: Google Maps
-  #   2: OpenStreetMap (Mapnik)
-  #   3: OpenStreetMap (Mapbox)
-  map = 0
-  map_api_key = ""
-  latitude = "37.4275"
-  longitude = "-122.1697"
-  zoom = 15
-
-  # Date and time format (refer to Go's date format: http://fuckinggodateformat.com )
-  #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
   date_format = "Jan 2, 2006"
-  #   Examples: "3:04 pm" or "15:04"
-  time_format = "3:04 PM"
 
-  # Show estimated reading time for posts?
-  reading_time = true
-
-  # Display comment count? Requires commenting to be enabled.
-  comment_count = true
-
-  # Display next/previous section pager?
-  section_pager = false
-
-  # Enable global LaTeX math rendering?
-  #   If false, you can enable it locally on a per page basis.
-  math = false
-
-  # Highlight.js options
-  #   highlight
-  #     Enable global source code highlighting?  If false, you can
-  #     override it for a particular page in that page's preamble.
-  #
-  #     Example: highlight = true
-  #
-  #   highlight_languages
-  #     Add support for highlighting additional languages. Support for
-  #     languages mentioned here will be included in all pages. You
-  #     can also set this variable for a particular page in that
-  #     page's preamble.
-  #
-  #     Example: highlight_languages = ["go", "lisp", "ocaml"]
-  #
-  #   highlight_style
-  #     Choose a different CSS style for highlighting source
-  #     code. Setting this option in a page's preamble has no
-  #     effect.
-  #
-  #     Example: highlight_style = "github-gist"
-  #
-  #   For the list of supported languages and styles, see:
-  #   https://cdnjs.com/libraries/highlight.js/
-  #
-  #   For more info on the highlighting options, see:
-  #   https://sourcethemes.com/academic/post/writing-markdown-latex/#highlighting-options
   highlight = true
-  highlight_languages = []
-  # highlight_style = "github"
-
-  # Enable native social sharing buttons?
-  sharing = true
+  highlight_languages = ["python"]
 
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
   custom_css = []
   custom_js  = []
 
+  sharing = true
+  comment_count = true
+  reading_time = true
+
   # Publication types.
   #   Used to categorize publications.
   #   The index of the publication type in the list is used as its unique numerical identifier.
   #   The numeric ID is used in a publication's frontmatter to categorize it.
   #   The language can be edited below.
-  #   For multilingual sites, `publication_types` can be copied to each language section at the end of this file and
-  #   translated.
+  #   For multi-lingual sites, copy this block to each language section at the end of this file.
   publication_types = [
     'Uncategorized',  # 0
-    'Conference paper',  # 1
-    'Journal article',  # 2
-    'Manuscript',  # 3
-    'Report',  # 4
+    'Conference proceedings',  # 1
+    'Journal',  # 2
+    'Work in progress',  # 3
+    'Technical report',  # 4
     'Book',  # 5
-    'Book section'  # 6
+    'Book chapter'  # 6
   ]
 
   # Configuration of talk pages.
@@ -217,61 +131,26 @@ defaultContentLanguageInSubdir = false
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:test@example.org"
+    link = "mailto:info@lucasvandijk.nl"
 
   [[params.social]]
     icon = "twitter"
     icon_pack = "fa"
-    link = "//twitter.com/GeorgeCushen"
-
-  [[params.social]]
-    icon = "google-scholar"
-    icon_pack = "ai"
-    link = "https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ"
+    link = "//twitter.com/lucasvandijk"
 
   [[params.social]]
     icon = "github"
     icon_pack = "fa"
-    link = "//github.com/gcushen"
+    link = "//github.com/lrvdijk"
 
+  [[params.social]]
+    icon = "linkedin"
+    icon_pack = "fa"
+    link = "//linkedin.com/in/lrvandijk"
 
-# Navigation Links
-#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
-#     desired widget in your `content/home/` folder.
-#   The weight parameter defines the order that the links will appear in.
-[params.menus]
-  # Align the main menu to the right of the page? (true/false)
-  align_right = true
-
-[[menu.main]]
-  name = "Home"
-  url = "#about"
-  weight = 1
-
-[[menu.main]]
-  name = "Publications"
-  url = "#publications_selected"
-  weight = 2
-
-[[menu.main]]
-  name = "Posts"
-  url = "#posts"
-  weight = 3
-
-[[menu.main]]
-  name = "Projects"
-  url = "#projects"
-  weight = 4
-
-[[menu.main]]
-  name = "Teaching"
-  url = "#teaching"
-  weight = 5
-
-[[menu.main]]
-  name = "Contact"
-  url = "#contact"
-  weight = 6
+# Configure the English version of the website.
+[languages.en]
+  languageCode = "en-us"
 
 # Taxonomies.
 [taxonomies]
@@ -279,9 +158,27 @@ defaultContentLanguageInSubdir = false
   category = "categories"
   publication_type = "publication_types"
 
-# Languages
-#   Create a [languages.X] block for each language you want, where X is the language ID.
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
 
-# Configure the English version of the website.
-[Languages.en]
-  languageCode = "en-us"
+[[menu.main]]
+  name = "Home"
+  url = "#top"
+  weight = 1
+
+[[menu.main]]
+  name = "Blog"
+  url = "#blog"
+  weight = 2
+
+# [[menu.main]]
+#   name = "Publications"
+#   url = "#publications_selected"
+#   weight = 3
+
+[[menu.main]]
+  name = "Software"
+  url = "#projects"
+  weight = 4
