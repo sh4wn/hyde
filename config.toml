@@ -1,15 +1,16 @@
 baseURL = "https://lucasvandijk.nl/"
 languageCode = "en-us"
 title = '<span class="top">Lucas</span> <span class="bottom">van Dijk</span>'
-copyright = "&copy; 2017 Lucas van Dijk"
+copyright = "&copy; 2018 Lucas van Dijk"
 theme = "academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 preserveTaxonomyNames = true
 paginate = 10
 
 # Enable comments by entering your Disqus shortname
-disqusShortname = ""
+disqusShortname = "return1"
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
@@ -79,12 +80,12 @@ defaultContentLanguageInSubdir = false
   #   For multi-lingual sites, copy this block to each language section at the end of this file.
   publication_types = [
     'Uncategorized',  # 0
-    'Conference proceedings',  # 1
-    'Journal',  # 2
-    'Work in progress',  # 3
-    'Technical report',  # 4
+    'Conference paper',  # 1
+    'Journal article',  # 2
+    'Manuscript',  # 3
+    'Report',  # 4
     'Book',  # 5
-    'Book chapter'  # 6
+    'Book section'  # 6
   ]
 
   # Configuration of talk pages.
@@ -162,6 +163,9 @@ defaultContentLanguageInSubdir = false
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
 #     desired widget in your `content/home/` folder.
 #   The weight parameter defines the order that the links will appear in.
+[params.menus]
+  # Align the main menu to the right of the page? (true/false)
+  align_right = true
 
 [[menu.main]]
   name = "Home"
