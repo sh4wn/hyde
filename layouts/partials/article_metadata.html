@@ -1,55 +1,55 @@
 {{ $is_list := .is_list }}
 {{ $ := .content }}
 <div class="article-metadata">
-    {{ if isset $.Params "categories" }}
-        {{ $categoriesLen := len $.Params.categories }}
-        {{ if gt $categoriesLen 0 }}
-            {{ range $k, $v := $.Params.categories }}
-            <a class="article-category" href="{{ "/categories/" | relLangURL }}{{ . | urlize | lower }}">{{ . }}</a>
-            {{ end }}
-        {{ end }}
+  {{ if isset $.Params "categories" }}
+  {{ $categoriesLen := len $.Params.categories }}
+  {{ if gt $categoriesLen 0 }}
+  {{ range $k, $v := $.Params.categories }}
+  <a class="article-category" href="{{ "/categories/" | relLangURL }}{{ . | urlize | lower }}">{{ . }}</a>
+  {{ end }}
+  {{ end }}
+  {{ end }}
+
+  <span class="article-date">
+    {{ if ne $.Params.Lastmod $.Params.Date }}
+    {{ i18n "last_updated" }}
     {{ end }}
+    <time datetime="{{ $.Date }}" itemprop="datePublished">
+      {{ $.Lastmod.Format $.Site.Params.date_format }}
+    </time>
+  </span>
 
-    <span class="article-date">
-        {{ if ne $.Params.Lastmod $.Params.Date }}
-            {{ i18n "last_updated" }}
-        {{ end }}
-        <time datetime="{{ $.Date }}" itemprop="datePublished">
-            {{ $.Lastmod.Format $.Site.Params.date_format }}
-        </time>
-    </span>
+  {{ if ne $.Site.Params.reading_time false }}
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    {{ $.ReadingTime }} {{ i18n "minute_read" }}
+  </span>
+  {{ end }}
 
-    {{ if ne $.Site.Params.reading_time false }}
-        <span class="middot-divider"></span>
-        <span class="article-reading-time">
-            {{ $.ReadingTime }} {{ i18n "minute_read" }}
-        </span>
+  {{ $comments_enabled := and $.Site.DisqusShortname (not (or $.Site.Params.disable_comments $.Params.disable_comments)) }}
+  {{ if and $comments_enabled ($.Site.Params.comment_count | default true) }}
+  <span class="middot-divider"></span>
+  <a href="{{ $.Permalink }}#disqus_thread"><!-- Count will be inserted here --></a>
+  {{ end}}
+
+
+  {{ if ne $is_list 1 }}
+  {{ partial "share.html" $ }}
+
+  {{ if $.Params.authors }}
+  <table class="authors-box">
+    <tr>
+      <th>Authors</th>
+      <th>Affiliations</th>
+    </tr>
+    {{ range $k, $v := $.Params.authors }}
+    <tr>
+      <td>{{ $v.name }}</td>
+      <td>{{ $v.affiliation }}</td>
+    </tr>
     {{ end }}
-
-    {{ $comments_enabled := and $.Site.DisqusShortname (not (or $.Site.Params.disable_comments $.Params.disable_comments)) }}
-    {{ if and $comments_enabled ($.Site.Params.comment_count | default true) }}
-        <span class="middot-divider"></span>
-        <a href="{{ $.Permalink }}#disqus_thread"><!-- Count will be inserted here --></a>
-    {{ end}}
-
-
-    {{ if ne $is_list 1 }}
-    {{ partial "share.html" $ }}
-
-    {{ if $.Params.authors }}
-    <table class="authors-box">
-        <tr>
-            <th>Authors</th>
-            <th>Affiliations</th>
-        </tr>
-        {{ range $k, $v := $.Params.authors }}
-        <tr>
-            <td>{{ $v.name }}</td>
-            <td>{{ $v.affiliation }}</td>
-        </tr>
-        {{ end }}
-    </table>
-    {{ end }}
-    {{ end }}
+  </table>
+  {{ end }}
+  {{ end }}
 
 </div>
