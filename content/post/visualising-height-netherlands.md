@@ -5,7 +5,7 @@ authors:
       affiliation: "Delft University of Technology"
     - name: "Dorus Leliveld"
       affiliation: "Delft University of Technology"
-date: 2018-01-14
+date: 2018-02-01
 categories: ['Data Project']
 tags: ['python', 'gis']
 custom_css:
@@ -22,16 +22,20 @@ header:
     Works. Photo by Isaï Symens"
 ---
 
-The Netherlands can be roughly translated as "the low countries", and that name 
-is not coming from nowhere. In fact, large parts of our country lie below sea 
-level. To make sure our country doesn't flood, we have built lots of barriers, 
-dams and dykes to keep the water out, and we want to prevent anything like the 
-[North Sea Flood of 1953][north-sea-flood] from happening ever again. 
+On this date 65 years ago, February 1st 1953, the Netherlands experienced its 
+greatest flood till date, the [North Sea Flood of 1953][north-sea-flood]. This 
+is still one of the biggest disasters the Netherlands has ever experienced, 
+with thousands of casualties and lots of people who lost their homes.
 
-In the beginning of this year, several of these barriers and dams where put to 
+The Netherlands earns its name from the fact that large parts of the country 
+lie below sea level. To make sure our country doesn't flood, we have built lots 
+of barriers, dams and dykes to keep the water out, and we want to prevent 
+anything like the flood of 1953 from happening ever again. 
+
+In the beginning of this year, several of these barriers and dams were put to 
 the test when a heavy storm reached the Netherlands which resulted in very high 
-water levels. Our five biggest dams and barriers where closed at the same time, 
-something that has never happened before. We can ask ourselves the question 
+water levels. Our five biggest dams and barriers needed to be closed at the 
+same time, a first since their construction. We can ask ourselves the question 
 whether this will happen more often now that sea levels are rising due to 
 global warming [^sealevel]. A higher base line sea level increases the chance 
 for even higher water levels when it storms. To get an idea what areas would be 
@@ -43,12 +47,10 @@ that shows the height of the Netherlands in comparison to the sea level.
 
 <!--more-->
 
-![Maeslantkering](/img/blogimages/maeslantkering.jpg)
-
-<small>
-The Maeslantkering in closed state.
-Photo: <a href="https://beeldbank.rws.nl" target="_blank">Rijkswaterstaat</a>
-</small>
+{{< img src="/img/blogimages/maeslantkering.jpg" alt="Maeslantkering" >}}
+  The Maeslantkering in closed state.
+  Photo: <a href="https://beeldbank.rws.nl" target="_blank">Rijkswaterstaat</a>
+{{< /img >}}
 
 Things to check out
 -------------------

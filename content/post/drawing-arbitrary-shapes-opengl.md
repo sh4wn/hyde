@@ -30,8 +30,9 @@ surfaces, and it relies on a arbitrary shape function which for a given
 point in your image returns the distance to your shape surface or
 boundary from that given point. This is visualized in fig. 1.
 
-![Figure 1: Distances to the boundary of a
-circle](/img/blogimages/opengl-points/implicit-surfaces.png)
+{{< img src="/img/blogimages/opengl-points/implicit-surfaces.png" >}}
+Distances to the boundary of a circle
+{{< /img >}}
 
 The distances any shape function should return are highlighted in red.
 To actually be able to draw a shape, we need to distinguish whether a
@@ -64,8 +65,9 @@ negative.
 
 Consider fig. 2.
 
-![Figure 2: Visualizing the distances to the border of a
-square](/img/blogimages/opengl-points/distance-square.png)
+{{< img src="/img/blogimages/opengl-points/distance-square.png" >}}
+Visualizing the distances to the border of a square
+{{< /img >}}
 
 A square is a nice symmetric figure, so we can take the absolute values
 of the coordinates, and then we only need to consider the smaller
@@ -157,8 +159,9 @@ yourself. At the very minimum you'll need a *vertex shader* and a
 be positioned and the color of the individual pixels respectively. The
 pipeline is illustrated in fig. 3.
 
-![Figure 3: OpenGL pipeline illustrated. Picture courtesy of N. Rougier](
-/img/blogimages/opengl-points/gl-pipeline.png)
+{{< img src="/img/blogimages/opengl-points/gl-pipeline.png" >}}
+OpenGL pipeline illustrated.
+{{< /img >}}
 
 You can define your own attributes for each vertex, for example the
 position, colour, or orientation.
@@ -166,15 +169,16 @@ position, colour, or orientation.
 OpenGL has several modes for generating the actual primitives. These are
 illustrated in fig. 4.
 
-![Figure 4: OpenGL primitive generation modes. Picture courtesy of N. Rougier 
-](/img/blogimages/opengl-points/gl-primitives.png)
+{{< img src="/img/blogimages/opengl-points/gl-primitives.png" >}}
+OpenGL primitive generation modes.
+{{< /img >}}
 
 For a more in depth OpenGL introduction, I would recommend [this
 tutorial](http://www.labri.fr/perso/nrougier/teaching/opengl/), [Anton's
 OpenGL tutorials](http://antongerdelan.net/opengl/), or
 [opengl-tutorial.org](http://opengl-tutorial.org).
 
-<small>Above pictures courtesy of N. Rougier[^2].</small>
+<small>Above pictures courtesy of N. Rougier[^2]</small>
 
 ### General 2D shape shaders
 
@@ -246,7 +250,9 @@ can be rotated. To fit a rotated square of size *x* in another square,
 we need a bigger square of size $x\\sqrt{2}$ (I hope you guys remember
 Pythagoras). This is visualized in fig. 5.
 
-![Figure 5: Rotation of a square](/img/blogimages/opengl-points/point-rotation.png)
+{{< img src="/img/blogimages/opengl-points/point-rotation.png" >}}
+Rotation of a square
+{{< /img >}}
 
 Furthermore, we pass along some variables to the next steps in the
 pipeline (size, line width, antialias, color, rotation). Note we create
@@ -315,8 +321,9 @@ $$\begin{bmatrix}nx \\\\ ny\end{bmatrix} = \begin{bmatrix}x \\\\ y
 
 These transformations are visualized in fig. 6.
 
-![Figure 6: Transformation of the coordinates within a
-point](/img/blogimages/opengl-points/transformations.png)
+{{< img src="/img/blogimages/opengl-points/transformations.png" >}}
+Transformation of the coordinates within a point
+{{< /img >}}
 
 The green region in the bottom of fig. 6 is our canvas for drawing our
 shape. This is done by `shape_func()`, any function that returns the
@@ -338,7 +345,9 @@ curved arrow head. A curved arrow head can be constructed using the
 inverse of the union of three circles. This is visualized in fig. 7, and
 the accompanying shader code can be seen in lst. 3.
 
-![Figure 7: Construction of a curved arrow head](/img/blogimages/opengl-points/curved-arrows.png)
+{{< img src="/img/blogimages/opengl-points/curved-arrows.png" >}}
+Construction of a curved arrow head
+{{< /img >}}
 
 Listing 3: GLSL function to the distance of an arrow
 

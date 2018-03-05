@@ -1,0 +1,18 @@
+<!-- image -->
+{{ $scr := .Scratch }}
+{{ if .Get "alt" }}
+{{ $scr.Set "alt" (.Get "alt") }}
+{{ else }}
+{{ $scr.Set "alt" (.Inner|plainify) }}
+{{ end }}
+<p>
+    <figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
+        {{ with .Get "link"}}<a href="{{.}}">{{ end }}
+            <img src="{{ .Get "src" }}" alt="{{- $scr.Get "alt" -}}" />
+        {{ if .Get "link"}}</a>{{ end }}
+        {{ if .Inner }}
+        <figcaption>{{ .Inner }}</figcaption>
+        {{ end }}
+    </figure>
+</p>
+<!-- image -->

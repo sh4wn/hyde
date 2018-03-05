@@ -33,10 +33,15 @@ Implementing it with an AVR microcontroller
 
 Lets start with the circuit, which is really simple. 
 
-![Circuit with an AVR ATTiny44 to control a 
-servo](/img/blogimages/servoschema.jpg)
+{{< img src="/img/blogimages/servoschema.jpg" >}}
+Circuit with an AVR ATTiny44 to control a servo
+{{< /img >}}
 
-In this case, I use a 9V battery to power my AVR, and 4 AA batteries (total of 6V), to power my servo. It's better to use a different power source for your servos, because they can draw high currents when they're rotating, and therefore possibly trigger your reset of the AVR resulting from the voltage drop. 
+In this case, I use a 9V battery to power my AVR, and 4 AA batteries (total of 
+6V), to power my servo. It's better to use a different power source for your 
+servos, because they can draw high currents when they're rotating, and 
+therefore possibly trigger your reset of the AVR resulting from the voltage 
+drop. 
 
 I use the LM7805 to transform the 9V to 5V for the AVR, some capacitors to remove any AC components of the voltage, and a 4.7k resistor as a pull up for the reset pin. As you can see, nothing special here. More interesting is the source code running on the AVR.
 
@@ -87,10 +92,12 @@ To summarize what is does: you start with providing two values: a TOP value, and
 
 To visualize a bit what's happening, here's a drawing:
 
-![Value of the timer, and the match 
-events](/img/blogimages/servo-timer-match.jpg)
+{{< img src="/img/blogimages/servo-timer-match.jpg" >}}
+Value of the timer, and the match events
+{{< /img >}}
 
-Some things you can conclude from the above drawing and description: The value in ICR1 defines the frequency, the value in OCR1A defines the duty cycle.
+Some things you can conclude from the above drawing and description: The value 
+in ICR1 defines the frequency, the value in OCR1A defines the duty cycle.
 
 ### Calculating the values for ICR1 and OCR1A
 
